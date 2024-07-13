@@ -1,0 +1,13 @@
+button:hover{
+    transform: translateY(-10px);
+    color:white;
+}
+button{
+    color:rgb(183, 41, 183);
+    height:35px;
+    width:100px;
+    background-color: rgba(137, 43, 226, 0.289);
+    -webkit-box-shadow:0px 0px 70px 20px rgba(106,24,158,0.6);
+-moz-box-shadow: 0px 0px 70px 20px rgba(106,24,158,0.6);
+box-shadow: 0px 0px 70px 20px rgba(106,24,158,0.6);
+}

@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <title>Cart</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Html page that redirects users">
+        <meta name="keywords" content ="">
+        <meta name="author" content="robin dupuis">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="refresh" content="3000">
+        <link rel="website icon" type="png" href="Wicon.png" sizes="any">
+        <link rel="stylesheet" href="nav.css">
+        <link rel="stylesheet" href="background.css">
+        <link rel="stylesheet" href="headerAnim.css">
+        <link rel="stylesheet" href="article.css">
+        <link rel="stylesheet" href="button.css">
+    </head>
+
+    <body align="center">
+        
+        <h1>Your Cart</h1>
+        <hr>
+        <div class="header">
+            <nav class="nav">
+                <ul>
+                    <li class="nav-link" title="Click here for the home page">
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-link" title="Click here to shop">
+                        <a href="Shop.html">Shop Here</a>
+                    </li>
+
+                    <li class="nav-link" title="You are already seeing your cart">
+                        <a href="Cart.html">Your cart</a>
+                    </li>
+
+                    <li class="nav-link" title="Click here to contact us">
+                        <a href="Contact.html">Contact us</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    <article>
+        <h4 id="amethyst-quantity">Number of Amethyst: 0</h4>
+        <h4 id="amazonite-quantity">Number of Amazonite: 0</h4>
+        <h4 id="agate-quantity">Number of Agate: 0</h4>
+
+        <h4 id="jade-quantity">Number of Jade: 0</h4>
+        <h4 id="jasper-quantity">Number of Jasper: 0</h4>
+        <h4 id="jay-quantity">Number of Jay: 0</h4>
+
+        <h4 id="ruby-quantity">Number of Ruby: 0</h4>
+        <h4 id="rhodolite-quantity">Number of Rhodolite: 0</h4>
+        <h4 id="rutile-quantity">Number of Rutile: 0</h4>
+        <br>
+    
+        <h4 id="total">Total: $0.00</h4>
+    </article>
+    <br>
+    <br>
+        <button id="checkout">Check Out</button>
+        <button id="reset-cart" onclick="resetCart()">Clear Cart</button>
+    
+        <script>
+            var cart = JSON.parse(localStorage.getItem("cart"));
+    
+            if (cart) {
+                var total = 0;
+                for (var item in cart) {
+                    document.getElementById(item + "-quantity").innerHTML = "Number of " + item + ": " + cart[item].quantity;
+                    total += cart[item].price * cart[item].quantity;
+                }
+                document.getElementById("total").innerHTML = "Total: $" + total.toFixed(2);
+            }
+            else{
+                document.getElementById("amethyst-quantity").innerHTML = "Number of Amethyst : 0";
+                document.getElementById("amazonite-quantity").innerHTML = "Number of Amazonite: 0";
+                document.getElementById("agate-quantity").innerHTML = "Number of Agate: 0";
+
+                document.getElementById("jade-quantity").innerHTML = "Number of Jade : 0";
+                document.getElementById("jasper-quantity").innerHTML = "Number of Jasper: 0";
+                document.getElementById("jay-quantity").innerHTML = "Number of Jay: 0";
+
+                document.getElementById("ruby-quantity").innerHTML = "Number of Ruby : 0";
+                document.getElementById("rhodolite-quantity").innerHTML = "Number of Rhodolite: 0";
+                document.getElementById("rutile-quantity").innerHTML = "Number of Rutile: 0";
+                document.getElementById("total").innerHTML = "Total: $0.00";
+            }
+    
+            function resetCart() {
+                localStorage.removeItem("cart");
+                document.getElementById("amethyst-quantity").innerHTML = "Number of Amethyst : 0";
+                document.getElementById("amazonite-quantity").innerHTML = "Number of Amazonite: 0";
+                document.getElementById("agate-quantity").innerHTML = "Number of Agate: 0";
+
+                document.getElementById("jade-quantity").innerHTML = "Number of Jade : 0";
+                document.getElementById("jasper-quantity").innerHTML = "Number of Jasper: 0";
+                document.getElementById("jay-quantity").innerHTML = "Number of Jay: 0";
+
+                document.getElementById("ruby-quantity").innerHTML = "Number of Ruby : 0";
+                document.getElementById("rhodolite-quantity").innerHTML = "Number of Rhodolite: 0";
+                document.getElementById("rutile-quantity").innerHTML = "Number of Rutile: 0";
+                document.getElementById("total").innerHTML = "Total: $0.00";
+            }
+        </script>
+
+</body>
+</html>

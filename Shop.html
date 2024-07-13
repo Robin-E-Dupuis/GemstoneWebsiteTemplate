@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <title>GemSpace</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Html page that redirects users">
+        <meta name="keywords" content ="">
+        <meta name="author" content="robin dupuis">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="refresh" content="3000">
+        <link rel="website icon" type="png" href="Wicon.png" sizes="any">
+        <link rel="stylesheet" href="nav.css">
+        <link rel="stylesheet" href="background.css">
+        <link rel="stylesheet" href="article.css">
+        <link rel="stylesheet" href="headerAnim.css">
+        <link rel="stylesheet" href="imageHover.css">
+    </head>
+
+    <body align="center">
+        <h1>
+            The Gem Space
+        </h1>
+        <hr>
+            <div class="header">
+                <nav class="nav">
+                    <ul>
+                        <li class="nav-link" title="Click here for the home page">
+                            <a href="index.html">Home</a>
+                        </li>
+
+                        <li class="nav-link" title="You are already here">
+                            <a href="Shop.html">Shop Here</a>
+                        </li>
+
+                        <li class="nav-link" title="Click here to see your cart">
+                          <a href="Cart.html">
+                            Your cart&nbsp;
+                            <span id="items">0</span>
+                            <img id="cart" src="cart.png" height="20px" width="20px" style="vertical-align: middle; margin: 0 5px;">
+                          </a>
+                        </li>
+
+                        <li class="nav-link" title="Click here to contact us">
+                            <a href="Contact.html">Contact us</a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+           
+<br>
+<br>
+<br>
+<div class="grid-container">
+    <div class="grid-item">
+      <img src="amethyst.png" alt="Image 1">
+      <div class="middle"> 
+        <div class="text" id="amethyst" value="5" onclick="addItem('amethyst', 5)">Amethyst</div><br><br>
+        <div class="text">5&nbsp;$</div>
+      </div>
+    </div>
+    <div class="grid-item">
+      <img src="amazonite.png" alt="Image 2">
+      <div class="middle">
+        <div class="text" id="amazonite" value="5" onclick="addItem('amazonite', 5)">Amazonite</div><br><br>
+        <div class="text">5&nbsp;$</div>
+      </div>
+    </div>
+    <div class="grid-item">
+      <img src="Agate.png" alt="Image 3">
+      <div class="middle">
+        <div class="text" id="agate" value="5" onclick="addItem('agate', 5)">Agate</div><br><br>
+        <div class="text">5&nbsp;$</div>
+      </div>
+    </div>
+    
+    <div class="grid-item">
+      <img src="jade.png" alt="Image 5">
+      <div class="middle">
+        <div class="text" id="jade" value="7" onclick="addItem('jade', 7)">Jade</div><br><br>
+        <div class="text">7&nbsp;$</div>
+      </div>
+    </div>
+    <div class="grid-item">
+      <img src="jasper.png" alt="Image 6">
+      <div class="middle">
+        <div class="text" id="jasper" value="6" onclick="addItem('jasper', 6)">Jasper</div><br><br>
+        <div class="text">6&nbsp;$</div>
+      </div>
+    </div>
+    <div class="grid-item">
+      <img src="jay.png" alt="Image 7">
+      <div class="middle">
+        <div class="text" id="jay" value="6" onclick="addItem('jay', 6)">Jay</div><br><br>
+        <div class="text">6&nbsp;$</div>
+      </div>
+    </div>
+   
+
+    <div class="grid-item">
+      <img src="ruby.png" alt="Image 9">
+      <div class="middle">
+        <div class="text" id="ruby" value="7" onclick="addItem('ruby', 7)">Ruby</div><br><br>
+        <div class="text">7&nbsp;$</div>
+      </div>
+    </div>
+    <div class="grid-item">
+      <img src="rhodolite.png" alt="Image 10">
+      <div class="middle">
+        <div class="text"  id="rhodolite" value="6" onclick="addItem('rhodolite', 6)">Rhodolite</div><br><br>
+        <div class="text">6&nbsp;$</div>
+      </div>
+    </div>
+    <div class="grid-item">
+      <img src="rutile.png" alt="Image 11">
+      <div class="middle">
+        <div class="text"  id="rutile" value="6" onclick="addItem('rutile', 6)">Rutile</div><br><br>
+        <div class="text">6&nbsp;$</div>
+      </div>
+    </div>
+   
+  </div>
+                
+    </body>
+    <footer>copyrights to website Owner©</footer>
+
+
+    <script>
+      var cart = {};
+
+      function addItem(item, price) {
+          if (cart[item]) {
+              cart[item].quantity++;
+          } else {
+              cart[item] = { quantity: 1, price: price };
+          }
+          updateCart();
+          localStorage.setItem("cart", JSON.stringify(cart));
+      }
+
+      function updateCart() {
+          var totalItems = 0;
+          for (var item in cart) {
+              totalItems += cart[item].quantity;
+          }
+          document.getElementById("items").innerHTML = totalItems;
+      }
+  </script>
+
+</html>

@@ -1,0 +1,14 @@
+h1{
+    animation: myHeader;
+    animation-duration:5s;
+    animation-delay:1s;
+    animation-timing-function: ease;
+    color:rgb(183, 41, 183);
+    background-color: rgba(137, 43, 226, 0.289);
+   
+   }
+   
+   @keyframes myHeader{
+       from{margin-left: 100%;}
+       to{margin-left: 0%}
+   }
